@@ -1,0 +1,126 @@
+@import "./mixins";
+
+.accordion__section {
+  display: flex;
+  flex-direction: column;
+}
+
+.accordion {
+  @include primary-gradient;
+  @include primary-text;
+  @include accordion;
+}
+
+.accordion__secondary {
+  @include accordion;
+  @include secondary-gradient;
+  @include secondary-text;
+}
+
+.accordion__dark {
+  @include accordion;
+  @include dark-gradient;
+  @include dark-text;
+}
+
+.accordion:hover {
+  @include primary-hover;
+}
+
+.accordion__secondary:hover {
+  color: #fff;
+}
+
+.accordion__dark:hover {
+  @include dark-hover;
+}
+
+.accordion__icon {
+  margin-left: 10px;
+  align-self: center;
+}
+
+.accordion__arrow {
+  transform: rotate(90deg);
+  transition: 0.6s ease;
+}
+
+.accordion__link-icon {
+  margin-left: 11px;
+}
+
+.accordion__link-text {
+  font-family: inherit, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px;
+  margin-top: 5px;
+}
+
+.rotate {
+  transform: rotate(0deg);
+}
+
+.accordion__link-wrapper {
+  @include accordion__link-wrapper;
+}
+
+.accordion__link-wrapper-secondary {
+  @include accordion__link-wrapper;
+}
+
+.accordion__link-wrapper-dark {
+  @include accordion__link-wrapper;
+}
+
+.accordion__link-wrapper:hover {
+  @include primary-hover;
+}
+
+.accordion__link-wrapper-secondary:hover {
+  color: #fff;
+}
+
+.accordion__link-wrapper-dark:hover {
+  @include dark-hover;
+}
+
+.accordion__content {
+  @include accordion__content;
+  background-color: inherit;
+}
+
+.accordion__content-secondary {
+  @include accordion__content;
+  @include secondary-text;
+  background-color: inherit;
+}
+
+.accordion__content-dark {
+  @include accordion__content;
+  @include dark-text;
+  background-color: inherit;
+}
+
+.accordion__text {
+  font-family: inherit, sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 10px;
+  color: inherit;
+}
+
+@keyframes fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.hidden {
+  animation: fade-out 0.6s;
+  max-height: 0;
+  transition: max-height 0.6s ease-in;
+}
