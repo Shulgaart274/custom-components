@@ -7,7 +7,9 @@ function App() {
     <Switch>
       <>
         <div className="app">
-          <Button size="sm">Button</Button>
+          <Button width={150} size="sm">
+            Button
+          </Button>
 
           <Button variant="secondary" size="lg">
             Secondary

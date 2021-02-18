@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 import PropTypes from "prop-types";
-import "./button.scss";
+import styles from "./button.module.scss";
 
 const Button = ({
   disabled,
@@ -38,10 +38,38 @@ const Button = ({
 
     setRippleStyle(newRippleStyle);
 
-    setState("ripple-start ripple-active");
+    setState(`${styles.rippleStart} ${styles.rippleActive}`);
     timerId = setTimeout(() => {
       setState("");
     }, 500);
+  };
+
+  const btnVariant = () => {
+    switch (variant) {
+      case "primary":
+        return `${styles.btn}`;
+      case "secondary":
+        return `${styles.btnSecondary}`;
+      case "dark":
+        return `${styles.btnDark}`;
+      case "disabled":
+        return `${styles.btnDisabled}`;
+      default:
+        return `${styles.btn}`;
+    }
+  };
+
+  const btnSize = () => {
+    switch (size) {
+      case "sm":
+        return `${styles.btnSizeSm}`;
+      case "md":
+        return `${styles.btnSizeMd}`;
+      case "lg":
+        return `${styles.btnSizeLg}`;
+      default:
+        return `${styles.btnSizeMd}`;
+    }
   };
 
   return (
@@ -49,7 +77,8 @@ const Button = ({
       style={{ width: width }}
       ref={button}
       onMouseDown={onMouseDown}
-      className={`btn btn-${variant} btn-size-${size}`}
+      className={`${btnVariant()}
+       ${btnSize()}`}
       type={type}
       disabled={variant === "disabled" || disabled ? true : false}
       onClick={onClick}
@@ -58,7 +87,7 @@ const Button = ({
       <span
         ref={ripple}
         style={rippleStyle}
-        className={`ripple ${state}`}
+        className={`${styles.ripple} ${state}`}
       ></span>
       {children}
     </button>

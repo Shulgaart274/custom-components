@@ -23,18 +23,18 @@ $animation-duration: 700ms;
     background-color: #6749b9;
   }
 
-  .ripple-active {
+  .rippleActive {
     transform: scale(1.5);
     transition: transform $animation-duration, opacity $animation-duration;
     opacity: 0;
   }
 
-  .ripple-start {
+  .rippleStart {
     transform: scale(1.5);
   }
 }
 
-.btn-primary {
+.btnPrimary {
   @include btn;
 
   & .ripple {
@@ -55,18 +55,18 @@ $animation-duration: 700ms;
     background-color: #6749b9;
   }
 
-  .ripple-active {
+  .rippleActive {
     transform: scale(1.5);
     transition: transform $animation-duration, opacity $animation-duration;
     opacity: 0;
   }
 
-  .ripple-start {
+  .rippleStart {
     transform: scale(1.5);
   }
 }
 
-.btn-secondary {
+.btnSecondary {
   @include btn;
   background-color: #3445b4;
 
@@ -88,18 +88,18 @@ $animation-duration: 700ms;
     background-color: #2a3891;
   }
 
-  .ripple-active {
+  .rippleActive {
     transform: scale(1.5);
     transition: transform $animation-duration, opacity $animation-duration;
     opacity: 0;
   }
 
-  .ripple-start {
+  .rippleStart {
     transform: scale(1.5);
   }
 }
 
-.btn-dark {
+.btnDark {
   @include btn;
   background-color: #c2902b;
   color: #fff;
@@ -122,18 +122,18 @@ $animation-duration: 700ms;
     background-color: #f8b739;
   }
 
-  .ripple-active {
+  .rippleActive {
     transform: scale(1.5);
     transition: transform $animation-duration, opacity $animation-duration;
     opacity: 0;
   }
 
-  .ripple-start {
+  .rippleStart {
     transform: scale(1.5);
   }
 }
 
-.btn-disabled {
+.btnDisabled {
   @include btn;
   background-color: rgb(129, 128, 128);
   color: rgb(63, 63, 63);
@@ -147,17 +147,17 @@ $animation-duration: 700ms;
   }
 }
 
-.btn-size-sm {
+.btnSizeSm {
   font-size: 12px;
   padding: 10px 22px;
 }
 
-.btn-size-md {
+.btnSizeMd {
   font-size: 16px;
   padding: 14px 24px;
 }
 
-.btn-size-lg {
+.btnSizeLg {
   font-size: 20px;
   padding: 16px 32px;
 }
