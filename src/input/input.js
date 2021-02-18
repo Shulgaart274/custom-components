@@ -79,7 +79,8 @@ const TextInput = ({
     }
   };
 
-  const isLabelShown = value.length > 0 ? variantLabelHidden() : "label";
+  const isLabelShown =
+    value.length > 0 ? variantLabelHidden() : `${styles.label}`;
 
   return (
     <label
