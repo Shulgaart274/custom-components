@@ -1,0 +1,125 @@
+$animation-duration: 700ms;
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #866ec7;
+  width: fit-content;
+  font-weight: 500;
+  font-size: 14px;
+  list-style: none;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pagination .paginationItem {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 40px;
+  width: 40px;
+  text-decoration: none;
+  transition: background-color 0.2s;
+  border: 1px solid #ddd;
+
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.paginationButton {
+  display: block;
+  position: relative;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  text-align: center;
+  line-height: 40px;
+  cursor: pointer;
+
+  & .ripple {
+    background-color: #ccc;
+    border-radius: 50%;
+    pointer-events: none;
+    position: absolute;
+    transform: scale(0);
+  }
+  .rippleActive {
+    transform: scale(1.5);
+    transition: transform $animation-duration, opacity $animation-duration;
+    opacity: 0;
+  }
+
+  .rippleStart {
+    transform: scale(1.5);
+  }
+}
+
+.paginationButton:focus,
+.paginationButton:active {
+  outline: #6749b9;
+}
+
+.pagination .paginationItem.active {
+  background-color: #ccc;
+  color: white;
+  border: 1px solid #fff;
+}
+
+.pagination .paginationItem.disabled {
+  opacity: 0.3;
+}
+.pagination .paginationItem:hover:not(.active) {
+  background-color: #6749b9;
+}
+
+.pagination .paginationItem.disabled:hover {
+  background-color: #866ec7;
+  opacity: 0.3;
+}
+
+.pagination.secondary {
+  background-color: #3445b4;
+}
+
+.pagination.secondary .paginationButton:focus,
+.pagination.secondary .paginationButton:active {
+  outline: #3445b4;
+}
+
+.pagination.secondary .paginationItem:hover:not(.active) {
+  background-color: #2a3891;
+}
+
+.pagination.secondary .paginationItem.disabled:hover {
+  background-color: #3445b4;
+  opacity: 0.3;
+}
+
+.pagination.dark {
+  background-color: #c2902b;
+}
+
+.pagination.dark .paginationButton:focus,
+.pagination.dark .paginationButton:active {
+  outline: #f8b739;
+}
+
+.pagination.dark .paginationItem:hover:not(.active) {
+  background-color: #f8b739;
+}
+
+.pagination.dark .paginationItem.disabled:hover {
+  background-color: #c2902b;
+  opacity: 0.3;
+}
