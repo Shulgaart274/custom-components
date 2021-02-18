@@ -1,35 +1,35 @@
 @import "./mixins";
 
-.custom-field .text-input:not(:focus)::placeholder {
+.customField .textInput:not(:focus)::placeholder {
   visibility: hidden;
 }
 
-.text-input:disabled {
+.textInput:disabled {
   cursor: not-allowed;
 }
 
-.custom-field {
+.customField {
   @include custom-field;
 }
 
-.custom-field .text-input {
+.customField .textInput {
   @include input;
 }
 
-.custom-field .text-input.dark,
-.custom-field.second .text-input.dark,
-.custom-field.fourth .text-input.dark {
+.customField .textInput.dark,
+.customField.second .textInput.dark,
+.customField.fourth .textInput.dark {
   background: hsla(0deg, 0%, 100%, 0.22);
   color: #fff;
 }
 
-.custom-field .text-input:focus.dark,
-.custom-field.second .text-input:focus.dark,
-.custom-field.fourth .text-input:focus.dark {
+.customField .textInput:focus.dark,
+.customField.second .textInput:focus.dark,
+.customField.fourth .textInput:focus.dark {
   background: #001010;
 }
 
-.label-hidden {
+.labelHidden {
   position: absolute;
   left: 12px;
   transform: translateY(-50%);
@@ -40,7 +40,7 @@
 
 // error
 
-.custom-field[requirederror]::after {
+.customField[requirederror]::after {
   content: attr(requirederror);
   position: absolute;
   left: 12px;
@@ -50,7 +50,7 @@
   color: #ff3333;
 }
 
-.label-hidden-second {
+.labelHiddenSecond {
   position: absolute;
   left: 8px;
   padding: 0 5px;
@@ -61,7 +61,7 @@
   color: #aaa;
 }
 
-.custom-field .label {
+.customField .label {
   position: absolute;
   left: 12px;
   top: calc(50% + 10px);
@@ -70,33 +70,33 @@
   transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
 }
 
-.custom-field .text-input:focus + .label,
-.custom-field .text-input:focus + .label-hidden {
+.customField .textInput:focus + .label,
+.customField .textInput:focus + .labelHidden {
   top: 10px;
   font-size: 10px;
   color: #866ec7;
 }
 
-.custom-field .text-input:focus + .label.secondary,
-.custom-field .text-input:focus + .label-hidden.secondary {
+.customField .textInput:focus + .label.secondary,
+.customField .textInput:focus + .labelHidden.secondary {
   top: 10px;
   font-size: 10px;
   color: #3445b4;
 }
 
-.custom-field .text-input:focus + .label.dark,
-.custom-field .text-input:focus + .label-hidden.dark {
+.customField .textInput:focus + .label.dark,
+.customField .textInput:focus + .labelHidden.dark {
   top: 10px;
   font-size: 10px;
   color: #f8b739;
 }
 
-.custom-field .text-input:focus:invalid + .label,
-.custom-field .text-input:focus:invalid + .label-hidden,
-.custom-field .text-input:focus:invalid + .label.secondary,
-.custom-field .text-input:focus:invalid + .label-hidden.secondary,
-.custom-field .text-input:focus:invalid + .label.dark,
-.custom-field .text-input:focus:invalid + .label-hidden.dark {
+.customField .textInput:focus:invalid + .label,
+.customField .textInput:focus:invalid + .labelHidden,
+.customField .textInput:focus:invalid + .label.secondary,
+.customField .textInput:focus:invalid + .labelHidden.secondary,
+.customField .textInput:focus:invalid + .label.dark,
+.customField .textInput:focus:invalid + .labelHidden.dark {
   top: 10px;
   font-size: 10px;
   color: #ff3333;
@@ -104,66 +104,66 @@
 
 // Second
 
-.custom-field.second .text-input {
+.customField.second .textInput {
   background: #fff;
   padding: 12px;
   border: 2px solid #ddd;
   transition: border-color 0.3 ease;
 }
 
-.custom-field.second .text-input:focus.primary {
+.customField.second .textInput:focus.primary {
   border-color: #866ec7;
   transition-delay: 0.1s;
 }
 
-.custom-field.second .text-input:focus.secondary {
+.customField.second .textInput:focus.secondary {
   border-color: #3445b4;
   transition-delay: 0.1s;
 }
 
-.custom-field.second .text-input:focus.dark {
+.customField.second .textInput:focus.dark {
   border-color: #f8b739;
   transition-delay: 0.1s;
 }
 
-.custom-field.second .text-input + .label,
-.custom-field.second .text-input + .label-hidden-second {
+.customField.second .textInput + .label,
+.customField.second .textInput + .labelHiddenSecond {
   padding: 0 5px;
   left: 8px;
 }
 
-.custom-field.second .text-input:focus:invalid.primary,
-.custom-field.second .text-input:focus:invalid.secondary,
-.custom-field.second .text-input:focus:invalid.dark {
+.customField.second .textInput:focus:invalid.primary,
+.customField.second .textInput:focus:invalid.secondary,
+.customField.second .textInput:focus:invalid.dark {
   border-color: #ff3333;
   transition-delay: 0.1s;
 }
 
-.custom-field.second .text-input:focus:invalid + .label.primary,
-.custom-field.second .text-input:focus:invalid + .label-hidden-second.primary,
-.custom-field.second .text-input:focus:invalid + .label.secondary,
-.custom-field.second .text-input:focus:invalid + .label-hidden-second.secondary,
-.custom-field.second .text-input:focus:invalid + .label.dark,
-.custom-field.second .text-input:focus:invalid + .label-hidden-second.dark {
+.customField.second .textInput:focus:invalid + .label.primary,
+.customField.second .textInput:focus:invalid + .labelHiddenSecond.primary,
+.customField.second .textInput:focus:invalid + .label.secondary,
+.customField.second .textInput:focus:invalid + .labelHiddenSecond.secondary,
+.customField.second .textInput:focus:invalid + .label.dark,
+.customField.second .textInput:focus:invalid + .labelHiddenSecond.dark {
   color: #ff3333;
   top: 20px;
   background: #fff;
 }
 
-.custom-field.second .text-input:focus + .label.primary,
-.custom-field.second .text-input:focus + .label-hidden-second.primary {
+.customField.second .textInput:focus + .label.primary,
+.customField.second .textInput:focus + .labelHiddenSecond.primary {
   color: #866ec7;
   top: 20px;
   background: #fff;
 }
-.custom-field.second .text-input:focus + .label.secondary,
-.custom-field.second .text-input:focus + .label-hidden-second.secondary {
+.customField.second .textInput:focus + .label.secondary,
+.customField.second .textInput:focus + .labelHiddenSecond.secondary {
   color: #3445b4;
   top: 20px;
   background: #fff;
 }
-.custom-field.second .text-input:focus + .label.dark,
-.custom-field.second .text-input:focus + .label-hidden-second.dark {
+.customField.second .textInput:focus + .label.dark,
+.customField.second .textInput:focus + .labelHiddenSecond.dark {
   color: #f8b739;
   top: 20px;
   background: #fff;
@@ -171,9 +171,9 @@
 
 // Third
 
-.custom-field.third .text-input.primary:invalid,
-.custom-field.third .text-input.secondary:invalid,
-.custom-field.third .text-input.dark:invalid {
+.customField.third .textInput.primary:invalid,
+.customField.third .textInput.secondary:invalid,
+.customField.third .textInput.dark:invalid {
   border-radius: 0;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -185,13 +185,13 @@
   transition: background-size 0.3s ease;
 }
 
-.custom-field.third .text-input.primary:focus:invalid,
-.custom-field.third .text-input.secondary:focus:invalid,
-.custom-field.third .text-input.dark:focus:invalid {
+.customField.third .textInput.primary:focus:invalid,
+.customField.third .textInput.secondary:focus:invalid,
+.customField.third .textInput.dark:focus:invalid {
   background-size: 100% 2px, 100% 2px, 100%;
 }
 
-.custom-field.third .text-input.primary {
+.customField.third .textInput.primary {
   border-radius: 0;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -202,7 +202,7 @@
   transition: background-size 0.3s ease;
 }
 
-.custom-field.third .text-input.secondary {
+.customField.third .textInput.secondary {
   border-radius: 0;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -213,7 +213,7 @@
   transition: background-size 0.3s ease;
 }
 
-.custom-field.third .text-input.dark {
+.customField.third .textInput.dark {
   border-radius: 0;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -229,7 +229,7 @@
   transition: background-size 0.3s ease;
 }
 
-.custom-field.third .text-input.dark:focus {
+.customField.third .textInput.dark:focus {
   border-radius: 0;
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
@@ -241,15 +241,15 @@
   background-size: 100% 2px, 100% 2px, 100%;
 }
 
-.custom-field.third .text-input:focus {
+.customField.third .textInput:focus {
   background-size: 100% 2px, 100% 2px, 100%;
 }
 
 // Fourth
 
-.custom-field.fourth .border.primary,
-.custom-field.fourth .border.secondary,
-.custom-field.fourth .border.dark {
+.customField.fourth .border.primary,
+.customField.fourth .border.secondary,
+.customField.fourth .border.dark {
   width: 100%;
   height: calc(100% - 20px);
   position: absolute;
@@ -259,12 +259,12 @@
   cursor: text;
 }
 
-.custom-field.fourth .border.primary::before,
-.custom-field.fourth .border.primary::after,
-.custom-field.fourth .border.secondary::before,
-.custom-field.fourth .border.secondary::after,
-.custom-field.fourth .border.dark::before,
-.custom-field.fourth .border.dark::after {
+.customField.fourth .border.primary::before,
+.customField.fourth .border.primary::after,
+.customField.fourth .border.secondary::before,
+.customField.fourth .border.secondary::after,
+.customField.fourth .border.dark::before,
+.customField.fourth .border.dark::after {
   content: "";
   display: inline-block;
   width: 0;
@@ -274,7 +274,7 @@
   border-radius: 3px;
 }
 
-.custom-field.fourth .border.primary::before {
+.customField.fourth .border.primary::before {
   left: 0;
   bottom: 0;
   border-bottom: 0px solid #866ec7;
@@ -283,7 +283,7 @@
     height 0.2s ease 0.4s;
 }
 
-.custom-field.fourth .border.secondary::before {
+.customField.fourth .border.secondary::before {
   left: 0;
   bottom: 0;
   border-bottom: 0px solid #3445b4;
@@ -292,7 +292,7 @@
     height 0.2s ease 0.4s;
 }
 
-.custom-field.fourth .border.dark::before {
+.customField.fourth .border.dark::before {
   left: 0;
   bottom: 0;
   border-bottom: 0px solid #f8b739;
@@ -301,7 +301,7 @@
     height 0.2s ease 0.4s;
 }
 
-.custom-field.fourth .border.primary::after {
+.customField.fourth .border.primary::after {
   top: -2px;
   right: -2px;
   border-top: 0px solid #866ec7;
@@ -309,7 +309,7 @@
   transition: border-width 0s ease 0.4s, width 0.2s ease 0.2s, height 0.2s ease;
 }
 
-.custom-field.fourth .border.secondary::after {
+.customField.fourth .border.secondary::after {
   top: -2px;
   right: -2px;
   border-top: 0px solid #3445b4;
@@ -317,7 +317,7 @@
   transition: border-width 0s ease 0.4s, width 0.2s ease 0.2s, height 0.2s ease;
 }
 
-.custom-field.fourth .border.dark::after {
+.customField.fourth .border.dark::after {
   top: -2px;
   right: -2px;
   border-top: 0px solid #f8b739;
@@ -325,33 +325,33 @@
   transition: border-width 0s ease 0.4s, width 0.2s ease 0.2s, height 0.2s ease;
 }
 
-.custom-field.fourth .text-input:focus ~ .border.primary::after,
-.custom-field.fourth .text-input:focus ~ .border.primary::before,
-.custom-field.fourth .text-input:focus ~ .border.secondary::after,
-.custom-field.fourth .text-input:focus ~ .border.secondary::before,
-.custom-field.fourth .text-input:focus ~ .border.dark::after,
-.custom-field.fourth .text-input:focus ~ .border.dark::before {
+.customField.fourth .textInput:focus ~ .border.primary::after,
+.customField.fourth .textInput:focus ~ .border.primary::before,
+.customField.fourth .textInput:focus ~ .border.secondary::after,
+.customField.fourth .textInput:focus ~ .border.secondary::before,
+.customField.fourth .textInput:focus ~ .border.dark::after,
+.customField.fourth .textInput:focus ~ .border.dark::before {
   width: 100%;
   height: 100%;
   border-width: 2px;
 }
 
-.custom-field.fourth .text-input:focus ~ .border.primary::before,
-.custom-field.fourth .text-input:focus ~ .border.secondary::before,
-.custom-field.fourth .text-input:focus ~ .border.dark::before {
+.customField.fourth .textInput:focus ~ .border.primary::before,
+.customField.fourth .textInput:focus ~ .border.secondary::before,
+.customField.fourth .textInput:focus ~ .border.dark::before {
   transition: width 0.2s ease, height 0.2s ease 0.2s;
 }
 
-.custom-field.fourth .text-input:focus ~ .border.primary::after,
-.custom-field.fourth .text-input:focus ~ .border.secondary::after,
-.custom-field.fourth .text-input:focus ~ .border.dark::after {
+.customField.fourth .textInput:focus ~ .border.primary::after,
+.customField.fourth .textInput:focus ~ .border.secondary::after,
+.customField.fourth .textInput:focus ~ .border.dark::after {
   transition: border-width 0s ease 0.4s, width 0.2s ease 0.4s,
     height 0.2s ease 0.6s;
 }
 
 // required fourth error
 
-.custom-field.fourth .text-input:invalid ~ .border.primary::before {
+.customField.fourth .textInput:invalid ~ .border.primary::before {
   left: 0;
   bottom: 0;
   border-bottom: 0px solid #ff3333;
@@ -360,7 +360,7 @@
     height 0.2s ease 0.4s;
 }
 
-.custom-field.fourth .text-input:invalid ~ .border.primary::after {
+.customField.fourth .textInput:invalid ~ .border.primary::after {
   top: -2px;
   right: -2px;
   border-top: 0px solid #ff3333;
@@ -368,27 +368,27 @@
   transition: border-width 0s ease 0.4s, width 0.2s ease 0.2s, height 0.2s ease;
 }
 
-.custom-field.fourth .text-input:focus:invalid ~ .border.primary::after,
-.custom-field.fourth .text-input:focus:invalid ~ .border.primary::before,
-.custom-field.fourth .text-input:focus:invalid ~ .border.secondary::after,
-.custom-field.fourth .text-input:focus:invalid ~ .border.secondary::before,
-.custom-field.fourth .text-input:focus:invalid ~ .border.dark::after,
-.custom-field.fourth .text-input:focus:invalid ~ .border.dark::before {
+.customField.fourth .textInput:focus:invalid ~ .border.primary::after,
+.customField.fourth .textInput:focus:invalid ~ .border.primary::before,
+.customField.fourth .textInput:focus:invalid ~ .border.secondary::after,
+.customField.fourth .textInput:focus:invalid ~ .border.secondary::before,
+.customField.fourth .textInput:focus:invalid ~ .border.dark::after,
+.customField.fourth .textInput:focus:invalid ~ .border.dark::before {
   width: 100%;
   height: 100%;
   border-width: 2px;
   border-color: #ff3333;
 }
 
-.custom-field.fourth .text-input:focus:invalid ~ .border.primary::before,
-.custom-field.fourth .text-input:focus:invalid ~ .border.secondary::before,
-.custom-field.fourth .text-input:focus:invalid ~ .border.dark::before {
+.customField.fourth .textInput:focus:invalid ~ .border.primary::before,
+.customField.fourth .textInput:focus:invalid ~ .border.secondary::before,
+.customField.fourth .textInput:focus:invalid ~ .border.dark::before {
   transition: width 0.1s ease, height 0.1s ease 0.1s, border-color 0.1s;
 }
 
-.custom-field.fourth .text-input:focus:invalid ~ .border.primary::after,
-.custom-field.fourth .text-input:focus:invalid ~ .border.secondary::after,
-.custom-field.fourth .text-input:focus:invalid ~ .border.dark::after {
+.customField.fourth .textInput:focus:invalid ~ .border.primary::after,
+.customField.fourth .textInput:focus:invalid ~ .border.secondary::after,
+.customField.fourth .textInput:focus:invalid ~ .border.dark::after {
   transition: border-width 0s ease 0.2s, width 0.1s ease 0.2s,
     height 0.1s ease 0.3s, border-color 0.1s;
 }

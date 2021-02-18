@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import "./input.scss";
+import styles from "./input.module.scss";
 
 const TextInput = ({
   variant = "second",
@@ -38,44 +38,44 @@ const TextInput = ({
   const variantLabelHidden = () => {
     switch (variant) {
       case "first":
-        return "label-hidden";
+        return `${styles.labelHidden}`;
       case "second":
-        return "label-hidden-second";
+        return `${styles.labelHiddenSecond}`;
       case "third":
-        return "label-hidden";
+        return `${styles.labelHidden}`;
       case "fourth":
-        return "label-hidden";
+        return `${styles.labelHidden}`;
       default:
-        return "label-hidden";
+        return `${styles.labelHidden}`;
     }
   };
 
   const variantInput = () => {
     switch (variant) {
       case "first":
-        return "custom-field";
+        return `${styles.customField}`;
       case "second":
-        return "custom-field second";
+        return `${styles.customField} ${styles.second}`;
       case "third":
-        return "custom-field third";
+        return `${styles.customField} ${styles.third}`;
       case "fourth":
-        return "custom-field fourth";
+        return `${styles.customField} ${styles.fourth}`;
       default:
-        return "custom-field";
+        return `${styles.customField}`;
     }
   };
 
   const themeColor = () => {
     switch (color) {
       case "primary":
-        return "primary";
+        return `${styles.primary}`;
       case "secondary":
-        return "secondary";
+        return `${styles.secondary}`;
       case "dark":
-        return "dark";
+        return `${styles.dark}`;
 
       default:
-        return "primary";
+        return `${styles.primary}`;
     }
   };
 
@@ -89,7 +89,7 @@ const TextInput = ({
     >
       <input
         autoComplete={autoComplete}
-        className={`text-input ${themeColor()}`}
+        className={`${styles.textInput} ${themeColor()}`}
         variant={variant}
         maxLength={maxLength}
         type="text"
@@ -105,7 +105,7 @@ const TextInput = ({
       <span className={`${isLabelShown} ${themeColor()}`}>
         {required ? `${label}*` : label}
       </span>
-      <span className={`border ${themeColor()}`}></span>
+      <span className={`${styles.border} ${themeColor()}`}></span>
     </label>
   );
 };

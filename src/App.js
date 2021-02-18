@@ -63,8 +63,8 @@ function App() {
               color="dark"
               value={state}
               name="kek1"
-              label="Братик, вводи текст"
-              placeholder="Героям слава!"
+              label="Last Name"
+              placeholder="Enter your Last Name"
               onChange={handleChangeInput}
               onPressEnter={(value) => console.log(value)}
             />
