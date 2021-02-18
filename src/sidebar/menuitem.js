@@ -1,10 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styles from "./sidebar.module.scss";
 import Accordion from "./accordion";
 
 const MenuItem = ({ item, items, icons, theme }) => {
   return (
-    <div className="menu-item">
+    <div className={`${styles.menuItem}`}>
       <Accordion
         key={item.itemName}
         theme={theme}
