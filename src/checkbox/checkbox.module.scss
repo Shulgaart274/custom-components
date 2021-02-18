@@ -1,16 +1,16 @@
-.custom-checkbox {
+.customCheckbox {
   cursor: pointer;
   display: flex;
   align-items: center;
   margin: 10px 0;
 }
 
-.custom-checkbox .checkbox-label {
+.customCheckbox .customLabel {
   font-size: 16px;
   margin: 0 10px;
 }
 
-.custom-checkbox .checkmark-primary {
+.customCheckbox .checkmarkPrimary {
   width: 25px;
   height: 25px;
   display: inline-block;
@@ -19,7 +19,7 @@
   background: #866ec7 url(./checkbox-mark.png) center/2600% no-repeat;
   transition: background-size 0.2s ease;
 }
-.custom-checkbox .checkmark-secondary {
+.customCheckbox .checkmarkSecondary {
   width: 25px;
   height: 25px;
   border: 1px solid #222;
@@ -28,7 +28,7 @@
   background: #3445b4 url(./checkbox-mark.png) center/2600% no-repeat;
   transition: background-size 0.2s ease;
 }
-.custom-checkbox .checkmark-dark {
+.customCheckbox .checkmarkDark {
   width: 25px;
   height: 25px;
   border: 1px solid #f8b739;
@@ -38,13 +38,13 @@
   transition: background-size 0.2s ease;
 }
 
-.custom-checkbox .checkbox-input:checked + .checkmark-primary,
-.custom-checkbox .checkbox-input:checked + .checkmark-secondary,
-.custom-checkbox .checkbox-input:checked + .checkmark-dark {
+.customCheckbox .checkboxInput:checked + .checkmarkPrimary,
+.customCheckbox .checkboxInput:checked + .checkmarkSecondary,
+.customCheckbox .checkboxInput:checked + .checkmarkDark {
   background-size: 65%;
   transition: background-size 0.25s cubic-bezier(0.7, 0, 0.18, 1.24);
 }
 
-.custom-checkbox .checkbox-input {
+.customCheckbox .checkboxInput {
   display: none;
 }

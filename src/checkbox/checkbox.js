@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./checkbox.scss";
+import styles from "./checkbox.module.scss";
 
 const Checkbox = ({
   checked,
@@ -16,22 +16,22 @@ const Checkbox = ({
   const checkMarkTheme = () => {
     switch (color) {
       case "primary":
-        return "checkmark-primary";
+        return `${styles.checkmarkPrimary}`;
       case "secondary":
-        return "checkmark-secondary";
+        return `${styles.checkmarkSecondary}`;
       case "dark":
-        return "checkmark-dark";
+        return `${styles.checkmarkDark}`;
       default:
-        return "checkmark-primary";
+        return `${styles.checkmarkPrimary}`;
     }
   };
 
   return (
-    <label className="custom-checkbox">
+    <label className={`${styles.customCheckbox}`}>
       <input
         id={id}
         type="checkbox"
-        className="checkbox-input"
+        className={`${styles.checkboxInput}`}
         checked={checked}
         onChange={onChange}
         required={required}
@@ -41,7 +41,10 @@ const Checkbox = ({
         className={checkMarkTheme()}
         style={{ width: size, height: size }}
       ></span>
-      <span className="checkbox-label" style={{ fontSize: labelSize }}>
+      <span
+        className={`${styles.checkboxLabel}`}
+        style={{ fontSize: labelSize }}
+      >
         {label}
       </span>
     </label>
