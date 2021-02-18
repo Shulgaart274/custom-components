@@ -3,49 +3,51 @@ import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import Icon from "./icon";
 import { SidebarItem } from "./sidebar";
-import "./accordion.scss";
+import styles from "./accordion.module.scss";
 import { Link } from "react-router-dom";
 
 const Accordion = ({ item, items, theme, icons }) => {
   const [setActive, setActiveState] = useState("");
-  const [setHeight, setHeightState] = useState("accordion__content");
-  const [setRotate, setRotateState] = useState("accordion__arrow");
+  const [setHeight, setHeightState] = useState(`${styles.accordionContent}`);
+  const [setRotate, setRotateState] = useState(`${styles.accordionArrow}`);
 
   const toggleAccordion = () => {
     setActiveState(setActive === "" ? "active" : "");
     setHeightState(
       setActive === "active"
-        ? "accordion__content"
-        : "accordion__content hidden"
+        ? `${styles.accordionContent}`
+        : `${styles.accordionContent} ${styles.hidden}`
     );
     setRotateState(
-      setActive === "active" ? "accordion__arrow" : "accordion__arrow rotate"
+      setActive === "active"
+        ? `${styles.accordionArrow}`
+        : `${styles.accordionArrow} ${styles.rotate}`
     );
   };
 
   const accordionContentTheme = () => {
     switch (theme) {
       case "primary":
-        return "accordion__content";
+        return `${styles.accordionContent}`;
       case "secondary":
-        return "accordion__content-secondary";
+        return `${styles.accordionContentSecondary}`;
       case "dark":
-        return "accordion__content-dark";
+        return `${styles.accordionContentDark}`;
       default:
-        return "accordion__content";
+        return `${styles.accordionContent}`;
     }
   };
 
   const accordionLinkHoverTheme = () => {
     switch (theme) {
       case "primary":
-        return "accordion__link-wrapper";
+        return `${styles.accordionLinkWrapper}`;
       case "secondary":
-        return "accordion__link-wrapper-secondary";
+        return `${styles.accordionLinkWrapperSecondary}`;
       case "dark":
-        return "accordion__link-wrapper-dark";
+        return `${styles.accordionLinkWrapperDark}`;
       default:
-        return "accordion__content";
+        return `${styles.accordionLinkWrapper}`;
     }
   };
 
@@ -65,20 +67,20 @@ const Accordion = ({ item, items, theme, icons }) => {
   const accordionButtonTheme = () => {
     switch (theme) {
       case "primary":
-        return "accordion";
+        return `${styles.accordion}`;
       case "secondary":
-        return "accordion__secondary";
+        return `${styles.accordionSecondary}`;
       case "dark":
-        return "accordion__dark";
+        return `${styles.accordionDark}`;
       default:
-        return "accordion";
+        return `${styles.accordion}`;
     }
   };
 
   const arrow = icons.find((item) => item.iconName === "arrow");
 
   return (
-    <div className="accordion__section">
+    <div className={`${styles.accordionSection}`}>
       {item.items && item.items.length ? (
         <>
           <button className={accordionButtonTheme()} onClick={toggleAccordion}>
@@ -86,12 +88,12 @@ const Accordion = ({ item, items, theme, icons }) => {
               <Icon
                 icons={icons}
                 iconName={item.icon}
-                className="accordion__icon"
+                className={`${styles.accordionIcon}`}
                 width={20}
                 fill={accordionIconTheme()}
               />
             ) : null}
-            <p className="accordion__text">{item.label}</p>
+            <p className={`${styles.accordionText}`}>{item.label}</p>
             {arrow ? (
               <Icon
                 icons={icons}
@@ -112,12 +114,12 @@ const Accordion = ({ item, items, theme, icons }) => {
               <Icon
                 icons={icons}
                 iconName={item.icon}
-                className="accordion__link-icon"
+                className={`${styles.accordionLinkIcon}`}
                 width={20}
                 fill={accordionIconTheme()}
               />
             ) : null}
-            <span className="accordion__link-text">{item.label}</span>
+            <span className={`${styles.accordionLinkText}`}>{item.label}</span>
           </div>
         </Link>
       )}

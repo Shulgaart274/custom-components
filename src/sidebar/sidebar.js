@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MenuItem from "./menuitem";
 import PropTypes from "prop-types";
 import { Link, withRouter } from "react-router-dom";
-import "./sidebar.scss";
+import styles from "./sidebar.module.scss";
 
 export const SidebarItem = ({ item, items, theme, icons, ...rest }) => {
   return (
@@ -26,41 +26,47 @@ const Sidebar = ({
   icons,
 }) => {
   const [setActive, setActiveState] = useState("");
-  const [collapse, setCollapse] = useState("sidebar");
+  const [collapse, setCollapse] = useState(`${styles.sidebar}`);
   const [secondaryCollapse, setSecondaryCollapse] = useState(
-    "sidebar__secondary"
+    `${styles.sidebarSecondary}`
   );
-  const [darkCollapse, setDarkCollapse] = useState("sidebar__dark");
+  const [darkCollapse, setDarkCollapse] = useState(`${styles.sidebarDark}`);
 
   const [buttonCollapse, setButtonCollapse] = useState(
-    "sidebar__collapse-wrapper"
+    `${styles.sidebarCollapseWrapper}`
   );
 
   const collapseHandler = () => {
     setActiveState(setActive === "" ? "active" : "");
     setButtonCollapse(
       setActive === "active"
-        ? "sidebar__collapse-wrapper"
-        : "sidebar__collapse-wrapper button__collapsed"
+        ? `${styles.sidebarCollapseWrapper}`
+        : `${styles.sidebarCollapseWrapper} ${styles.buttonCollapsed}`
     );
     switch (theme) {
       case "primary":
         return setCollapse(
-          setActive === "active" ? "sidebar" : "sidebar collapsed"
+          setActive === "active"
+            ? `${styles.sidebar}`
+            : `${styles.sidebar} ${styles.collapsed}`
         );
       case "secondary":
         return setSecondaryCollapse(
           setActive === "active"
-            ? "sidebar__secondary"
-            : "sidebar__secondary collapsed"
+            ? `${styles.sidebarSecondary}`
+            : `${styles.sidebarSecondary} ${styles.collapsed}`
         );
       case "dark":
         return setDarkCollapse(
-          setActive === "active" ? "sidebar__dark" : "sidebar__dark collapsed"
+          setActive === "active"
+            ? `${styles.sidebarDark}`
+            : `${styles.sidebarDark} ${styles.collapsed}`
         );
       default:
         return setCollapse(
-          setActive === "active" ? "sidebar" : "sidebar collapsed"
+          setActive === "active"
+            ? `${styles.sidebar}`
+            : `${styles.sidebar} ${styles.collapsed}`
         );
     }
   };
@@ -81,13 +87,13 @@ const Sidebar = ({
   const sidebarButtonTheme = () => {
     switch (theme) {
       case "primary":
-        return "sidebar__collapse";
+        return `${styles.sidebarCollapse}`;
       case "secondary":
-        return "sidebar__collapse-secondary";
+        return `${styles.sidebarCollapseSecondary}`;
       case "dark":
-        return "sidebar__collapse-dark";
+        return `${styles.sidebarCollapseDark}`;
       default:
-        return "sidebar__collapse";
+        return `${styles.sidebarCollapse}`;
     }
   };
 
@@ -95,25 +101,29 @@ const Sidebar = ({
     <div className={sidebarTheme()}>
       <div className={`${buttonCollapse}`}>
         <button className={sidebarButtonTheme()} onClick={collapseHandler}>
-          <span className="sidebar__hamburger">
-            <hr className="line1" />
-            <hr className="line2" />
-            <hr className="line3" />
+          <span className={`${styles.sidebarHamburger}`}>
+            <hr className={`${styles.line1}`} />
+            <hr className={`${styles.line2}`} />
+            <hr className={`${styles.line3}`} />
           </span>
         </button>
       </div>
-      <div className="sidebar__title-wrapper">
+      <div className={`${styles.sidebarTitleWrapper}`}>
         {sidebarLogo ? (
-          <Link className="sidebar__link" to="/">
-            <img src={sidebarLogo} alt="logo" className="sidebar__logo" />
+          <Link className={`${styles.sidebarLink}`} to="/">
+            <img
+              src={sidebarLogo}
+              alt="logo"
+              className={`${styles.sidebarLogo}`}
+            />
           </Link>
         ) : (
-          <Link className="sidebar__link" to="/">
-            <h2 className="sidebar__title">{sidebarTitle}</h2>
+          <Link className={`${styles.sidebarLink}`} to="/">
+            <h2 className={`${styles.sidebarTitle}`}>{sidebarTitle}</h2>
           </Link>
         )}
       </div>
-      <div className="list">
+      <div className={`${styles.list}`}>
         {items.map((sidebarItem, index) => (
           <SidebarItem
             theme={theme}

@@ -6,13 +6,13 @@
   @include primary-text;
 }
 
-.sidebar__secondary {
+.sidebarSecondary {
   @include sidebar;
   @include secondary-color;
   color: #fff;
 }
 
-.sidebar__dark {
+.sidebarDark {
   @include sidebar;
   @include dark-color;
   @include dark-text;
@@ -22,18 +22,18 @@
   margin-left: -250px;
 }
 
-.button__collapsed {
+.buttonCollapsed {
   margin-right: -45px !important;
 }
 
-.sidebar__title-wrapper {
+.sidebarTitleWrapper {
   min-height: 10%;
   display: flex;
   padding: 25px;
   max-width: 250px;
 }
 
-.sidebar__title {
+.sidebarTitle {
   text-align: center;
   font-family: "Poppins", Arial, sans-serif;
   line-height: 1.5;
@@ -42,12 +42,12 @@
   padding-top: 15px;
 }
 
-.sidebar__link {
+.sidebarLink {
   text-decoration: none;
   color: inherit;
 }
 
-.sidebar__logo {
+.sidebarLogo {
   max-width: 100%;
   max-height: auto;
 }
@@ -58,7 +58,7 @@
   margin: 0;
 }
 
-.sidebar__collapse-wrapper {
+.sidebarCollapseWrapper {
   position: absolute;
   right: 0;
   display: inline-block;
@@ -67,34 +67,34 @@
   transition: 0.3s;
 }
 
-.sidebar__collapse {
+.sidebarCollapse {
   @include sidebar__collapse;
   @include primary-button-collapse;
 }
 
-.sidebar__collapse-secondary {
+.sidebarCollapseSecondary {
   @include sidebar__collapse;
   @include secondary-button-color;
 }
 
-.sidebar__collapse-dark {
+.sidebarCollapseDark {
   @include sidebar__collapse;
   @include dark-button-color;
 }
 
-.sidebar__collapse:hover,
-.sidebar__collapse:active,
-.sidebar__collapse:focus,
-.sidebar__collapse-secondary:hover,
-.sidebar__collapse-secondary:active,
-.sidebar__collapse-secondary:focus,
-.sidebar__collapse-dark:hover,
-.sidebar__collapse-dark:active,
-.sidebar__collapse-dark:focus {
+.sidebarCollapse:hover,
+.sidebarCollapse:active,
+.sidebarCollapse:focus,
+.sidebarCollapseSecondary:hover,
+.sidebarCollapseSecondary:active,
+.sidebarCollapseSecondary:focus,
+.sidebarCollapseDark:hover,
+.sidebarCollapseDark:active,
+.sidebarCollapseDark:focus {
   outline: none;
 }
 
-.sidebar__hamburger {
+.sidebarHamburger {
   display: flex;
   flex-direction: column;
   row-gap: 5px;
@@ -102,16 +102,16 @@
   height: fit-content;
   margin: 1px auto;
 }
-.sidebar__hamburger hr {
+.sidebarHamburger hr {
   width: 60%;
   height: 3px;
   border: none;
   background: #fff;
 }
-.sidebar__hamburger hr.line2 {
+.sidebarHamburger hr.line2 {
   width: 60%;
 }
-.sidebar__hamburger hr.line3 {
+.sidebarHamburger hr.line3 {
   width: 60%;
 }
 
@@ -127,7 +127,7 @@
 }
 
 @media screen and (max-width: 432px) {
-  .sidebar__fix {
+  .sidebarFix {
     margin-bottom: 15px;
   }
 
