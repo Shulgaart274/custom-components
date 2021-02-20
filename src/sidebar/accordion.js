@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import { withRouter } from "react-router-dom";
 import Icon from "./icon";
 import { SidebarItem } from "./sidebar";
@@ -142,13 +141,3 @@ const Accordion = ({ item, items, theme, icons }) => {
 };
 
 export default withRouter(Accordion);
-
-Accordion.propTypes = {
-  item: PropTypes.shape({
-    itemName: PropTypes.string,
-    label: PropTypes.string,
-    icon: PropTypes.string,
-    items: PropTypes.arrayOf(PropTypes.object),
-  }),
-  items: PropTypes.arrayOf(PropTypes.object),
-};
