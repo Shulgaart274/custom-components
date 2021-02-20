@@ -41,10 +41,7 @@ const Checkbox = ({
         className={checkMarkTheme()}
         style={{ width: size, height: size }}
       ></span>
-      <span
-        className={`${styles.checkboxLabel}`}
-        style={{ fontSize: labelSize }}
-      >
+      <span className={`${styles.customLabel}`} style={{ fontSize: labelSize }}>
         {label}
       </span>
     </label>

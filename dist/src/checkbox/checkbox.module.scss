@@ -1,0 +1,50 @@
+.customCheckbox {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.customCheckbox .customLabel {
+  font-size: 16px;
+  margin: 0 10px;
+}
+
+.customCheckbox .checkmarkPrimary {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  border: 1px solid #222;
+  border-radius: 3px;
+  background: #866ec7 url(./checkbox-mark.png) center/2600% no-repeat;
+  transition: background-size 0.2s ease;
+}
+.customCheckbox .checkmarkSecondary {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #222;
+  display: inline-block;
+  border-radius: 3px;
+  background: #3445b4 url(./checkbox-mark.png) center/2600% no-repeat;
+  transition: background-size 0.2s ease;
+}
+.customCheckbox .checkmarkDark {
+  width: 25px;
+  height: 25px;
+  border: 1px solid #f8b739;
+  display: inline-block;
+  border-radius: 3px;
+  background: #f8b739 url(./checkbox-mark.png) center/2600% no-repeat;
+  transition: background-size 0.2s ease;
+}
+
+.customCheckbox .checkboxInput:checked + .checkmarkPrimary,
+.customCheckbox .checkboxInput:checked + .checkmarkSecondary,
+.customCheckbox .checkboxInput:checked + .checkmarkDark {
+  background-size: 65%;
+  transition: background-size 0.25s cubic-bezier(0.7, 0, 0.18, 1.24);
+}
+
+.customCheckbox .checkboxInput {
+  display: none;
+}
