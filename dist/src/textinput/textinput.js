@@ -39,7 +39,7 @@ var TextInput = function TextInput(_ref) {
       _ref$color = _ref.color,
       color = _ref$color === void 0 ? "primary" : _ref$color,
       _ref$defaultValue = _ref.defaultValue,
-      defaultValue = _ref$defaultValue === void 0 ? "Some default value" : _ref$defaultValue,
+      defaultValue = _ref$defaultValue === void 0 ? "" : _ref$defaultValue,
       placeholder = _ref.placeholder,
       disabled = _ref.disabled,
       _ref$onChange = _ref.onChange,

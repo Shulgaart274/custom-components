@@ -59,7 +59,7 @@ function App() {
             <TextInput
               required
               widthInput="200px"
-              variant="second"
+              variant="fourth"
               color="dark"
               value={state}
               name="kek1"

@@ -5,7 +5,7 @@ import styles from "./textinput.module.scss";
 const TextInput = ({
   variant = "second",
   color = "primary",
-  defaultValue = "Some default value",
+  defaultValue = "",
   placeholder,
   disabled,
   onChange = () => {},
@@ -16,7 +16,6 @@ const TextInput = ({
   label,
   name,
   requiredHelper = "Textfield can't be empty!",
-
   widthInput = "100%",
   autoComplete,
 }) => {
