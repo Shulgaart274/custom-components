@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from "react";
 import { Switch, withRouter } from "react-router-dom";
-import TextInput from "./input/input";
+import TextInput from "./textinput/textinput";
 
 function App() {
   const [state, setState] = useState({});
@@ -26,7 +26,7 @@ function App() {
             style={{
               width: "300px",
               height: "300px",
-              backgroundColor: "#fafafa",
+              backgroundColor: "#fcfcfc",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
@@ -59,7 +59,7 @@ function App() {
             <TextInput
               required
               widthInput="200px"
-              variant="fourth"
+              variant="second"
               color="dark"
               value={state}
               name="kek1"

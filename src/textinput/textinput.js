@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import styles from "./input.module.scss";
+import styles from "./textinput.module.scss";
 
 const TextInput = ({
   variant = "second",
   color = "primary",
-  defaultValue = "Defaultvalue",
+  defaultValue = "Some default value",
   placeholder,
   disabled,
   onChange = () => {},
@@ -15,7 +15,8 @@ const TextInput = ({
   maxLength = 32,
   label,
   name,
-  requiredHelper = "Поле не может быть пустым!",
+  requiredHelper = "Textfield can't be empty!",
+
   widthInput = "100%",
   autoComplete,
 }) => {

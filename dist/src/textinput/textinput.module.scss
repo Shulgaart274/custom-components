@@ -1,0 +1,394 @@
+@import "./mixins";
+
+.customField .textInput:not(:focus)::placeholder {
+  visibility: hidden;
+}
+
+.textInput:disabled {
+  cursor: not-allowed;
+}
+
+.customField {
+  @include custom-field;
+}
+
+.customField .textInput {
+  @include input;
+}
+
+.customField .textInput.dark,
+.customField.second .textInput.dark,
+.customField.fourth .textInput.dark {
+  background: hsla(0deg, 0%, 100%, 0.22);
+  color: #fff;
+}
+
+.customField .textInput:focus.dark,
+.customField.second .textInput:focus.dark,
+.customField.fourth .textInput:focus.dark {
+  background: #001010;
+}
+
+.labelHidden {
+  position: absolute;
+  left: 12px;
+  transform: translateY(-50%);
+  top: 10px;
+  font-size: 10px;
+  color: #aaa;
+}
+
+// error
+
+.customField[requirederror]::after {
+  content: attr(requirederror);
+  position: absolute;
+  left: 12px;
+  transform: translateY(50%);
+  top: 59px;
+  font-size: 10px;
+  color: #ff3333;
+}
+
+.labelHiddenSecond {
+  position: absolute;
+  left: 8px;
+  padding: 0 5px;
+  transform: translateY(-50%);
+  font-size: 10px;
+  top: 20px;
+  background: #fff;
+  color: #aaa;
+}
+
+.customField .label {
+  position: absolute;
+  left: 12px;
+  top: calc(50% + 10px);
+  transform: translateY(-50%);
+  color: #aaa;
+  transition: top 0.3s ease, font-size 0.3s ease, color 0.3s ease;
+}
+
+.customField .textInput:focus + .label,
+.customField .textInput:focus + .labelHidden {
+  top: 10px;
+  font-size: 10px;
+  color: #866ec7;
+}
+
+.customField .textInput:focus + .label.secondary,
+.customField .textInput:focus + .labelHidden.secondary {
+  top: 10px;
+  font-size: 10px;
+  color: #3445b4;
+}
+
+.customField .textInput:focus + .label.dark,
+.customField .textInput:focus + .labelHidden.dark {
+  top: 10px;
+  font-size: 10px;
+  color: #f8b739;
+}
+
+.customField .textInput:focus:invalid + .label,
+.customField .textInput:focus:invalid + .labelHidden,
+.customField .textInput:focus:invalid + .label.secondary,
+.customField .textInput:focus:invalid + .labelHidden.secondary,
+.customField .textInput:focus:invalid + .label.dark,
+.customField .textInput:focus:invalid + .labelHidden.dark {
+  top: 10px;
+  font-size: 10px;
+  color: #ff3333;
+}
+
+// Second
+
+.customField.second .textInput {
+  background: #fff;
+  padding: 12px;
+  border: 2px solid #ddd;
+  transition: border-color 0.3 ease;
+}
+
+.customField.second .textInput:focus.primary {
+  border-color: #866ec7;
+  transition-delay: 0.1s;
+}
+
+.customField.second .textInput:focus.secondary {
+  border-color: #3445b4;
+  transition-delay: 0.1s;
+}
+
+.customField.second .textInput:focus.dark {
+  border-color: #f8b739;
+  transition-delay: 0.1s;
+}
+
+.customField.second .textInput + .label,
+.customField.second .textInput + .labelHiddenSecond {
+  padding: 0 5px;
+  left: 8px;
+}
+
+.customField.second .textInput:focus:invalid.primary,
+.customField.second .textInput:focus:invalid.secondary,
+.customField.second .textInput:focus:invalid.dark {
+  border-color: #ff3333;
+  transition-delay: 0.1s;
+}
+
+.customField.second .textInput:focus:invalid + .label.primary,
+.customField.second .textInput:focus:invalid + .labelHiddenSecond.primary,
+.customField.second .textInput:focus:invalid + .label.secondary,
+.customField.second .textInput:focus:invalid + .labelHiddenSecond.secondary,
+.customField.second .textInput:focus:invalid + .label.dark,
+.customField.second .textInput:focus:invalid + .labelHiddenSecond.dark {
+  color: #ff3333;
+  top: 20px;
+  background: #fff;
+}
+
+.customField.second .textInput:focus + .label.primary,
+.customField.second .textInput:focus + .labelHiddenSecond.primary {
+  color: #866ec7;
+  top: 20px;
+  background: #fff;
+}
+.customField.second .textInput:focus + .label.secondary,
+.customField.second .textInput:focus + .labelHiddenSecond.secondary {
+  color: #3445b4;
+  top: 20px;
+  background: #fff;
+}
+.customField.second .textInput:focus + .label.dark,
+.customField.second .textInput:focus + .labelHiddenSecond.dark {
+  color: #f8b739;
+  top: 20px;
+  background: #fff;
+}
+
+// Third
+
+.customField.third .textInput.primary:invalid,
+.customField.third .textInput.secondary:invalid,
+.customField.third .textInput.dark:invalid {
+  border-radius: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background: linear-gradient(90deg, #ff3333, #ff3333) center bottom/0 2px
+      no-repeat,
+    linear-gradient(90deg, #ccc, #ccc) left bottom/100% 2px no-repeat,
+    linear-gradient(90deg, #fafafa, #fafafa) left bottom/100% no-repeat;
+  background-size: 100% 2px, 100% 2px, 100%;
+  transition: background-size 0.3s ease;
+}
+
+.customField.third .textInput.primary:focus:invalid,
+.customField.third .textInput.secondary:focus:invalid,
+.customField.third .textInput.dark:focus:invalid {
+  background-size: 100% 2px, 100% 2px, 100%;
+}
+
+.customField.third .textInput.primary {
+  border-radius: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background: linear-gradient(90deg, #866ec7, #866ec7) center bottom/0 2px
+      no-repeat,
+    linear-gradient(90deg, #ccc, #ccc) left bottom/100% 2px no-repeat,
+    linear-gradient(90deg, #fafafa, #fafafa) left bottom/100% no-repeat;
+  transition: background-size 0.3s ease;
+}
+
+.customField.third .textInput.secondary {
+  border-radius: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background: linear-gradient(90deg, #3445b4, #3445b4) center bottom/0 2px
+      no-repeat,
+    linear-gradient(90deg, #ccc, #ccc) left bottom/100% 2px no-repeat,
+    linear-gradient(90deg, #fafafa, #fafafa) left bottom/100% no-repeat;
+  transition: background-size 0.3s ease;
+}
+
+.customField.third .textInput.dark {
+  border-radius: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background: linear-gradient(90deg, #f8b739, #f8b739) center bottom/0 2px
+      no-repeat,
+    linear-gradient(90deg, #ccc, #ccc) left bottom/100% 2px no-repeat,
+    linear-gradient(
+        90deg,
+        hsla(0deg, 0%, 100%, 0.22),
+        hsla(0deg, 0%, 100%, 0.22)
+      )
+      left bottom/100% no-repeat;
+  transition: background-size 0.3s ease;
+}
+
+.customField.third .textInput.dark:focus {
+  border-radius: 0;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  background: linear-gradient(90deg, #f8b739, #f8b739) center bottom/0 2px
+      no-repeat,
+    linear-gradient(90deg, #ccc, #ccc) left bottom/100% 2px no-repeat,
+    linear-gradient(90deg, #001010, #001010) left bottom/100% no-repeat;
+  transition: background-size 0.3s ease;
+  background-size: 100% 2px, 100% 2px, 100%;
+}
+
+.customField.third .textInput:focus {
+  background-size: 100% 2px, 100% 2px, 100%;
+}
+
+// Fourth
+
+.customField.fourth .border.primary,
+.customField.fourth .border.secondary,
+.customField.fourth .border.dark {
+  width: 100%;
+  height: calc(100% - 20px);
+  position: absolute;
+  left: 0;
+  top: 20px;
+  border-radius: 3px;
+  cursor: text;
+}
+
+.customField.fourth .border.primary::before,
+.customField.fourth .border.primary::after,
+.customField.fourth .border.secondary::before,
+.customField.fourth .border.secondary::after,
+.customField.fourth .border.dark::before,
+.customField.fourth .border.dark::after {
+  content: "";
+  display: inline-block;
+  width: 0;
+  height: 0;
+  position: absolute;
+
+  border-radius: 3px;
+}
+
+.customField.fourth .border.primary::before {
+  left: 0;
+  bottom: 0;
+  border-bottom: 0px solid #866ec7;
+  border-right: 0px solid #866ec7;
+  transition: border-width 0.2s ease 0.8s, width 0.2s ease 0.6s,
+    height 0.2s ease 0.4s;
+}
+
+.customField.fourth .border.secondary::before {
+  left: 0;
+  bottom: 0;
+  border-bottom: 0px solid #3445b4;
+  border-right: 0px solid #3445b4;
+  transition: border-width 0.2s ease 0.8s, width 0.2s ease 0.6s,
+    height 0.2s ease 0.4s;
+}
+
+.customField.fourth .border.dark::before {
+  left: 0;
+  bottom: 0;
+  border-bottom: 0px solid #f8b739;
+  border-right: 0px solid #f8b739;
+  transition: border-width 0.2s ease 0.8s, width 0.2s ease 0.6s,
+    height 0.2s ease 0.4s;
+}
+
+.customField.fourth .border.primary::after {
+  top: -2px;
+  right: -2px;
+  border-top: 0px solid #866ec7;
+  border-left: 0px solid #866ec7;
+  transition: border-width 0s ease 0.4s, width 0.2s ease 0.2s, height 0.2s ease;
+}
+
+.customField.fourth .border.secondary::after {
+  top: -2px;
+  right: -2px;
+  border-top: 0px solid #3445b4;
+  border-left: 0px solid #3445b4;
+  transition: border-width 0s ease 0.4s, width 0.2s ease 0.2s, height 0.2s ease;
+}
+
+.customField.fourth .border.dark::after {
+  top: -2px;
+  right: -2px;
+  border-top: 0px solid #f8b739;
+  border-left: 0px solid #f8b739;
+  transition: border-width 0s ease 0.4s, width 0.2s ease 0.2s, height 0.2s ease;
+}
+
+.customField.fourth .textInput:focus ~ .border.primary::after,
+.customField.fourth .textInput:focus ~ .border.primary::before,
+.customField.fourth .textInput:focus ~ .border.secondary::after,
+.customField.fourth .textInput:focus ~ .border.secondary::before,
+.customField.fourth .textInput:focus ~ .border.dark::after,
+.customField.fourth .textInput:focus ~ .border.dark::before {
+  width: 100%;
+  height: 100%;
+  border-width: 2px;
+}
+
+.customField.fourth .textInput:focus ~ .border.primary::before,
+.customField.fourth .textInput:focus ~ .border.secondary::before,
+.customField.fourth .textInput:focus ~ .border.dark::before {
+  transition: width 0.2s ease, height 0.2s ease 0.2s;
+}
+
+.customField.fourth .textInput:focus ~ .border.primary::after,
+.customField.fourth .textInput:focus ~ .border.secondary::after,
+.customField.fourth .textInput:focus ~ .border.dark::after {
+  transition: border-width 0s ease 0.4s, width 0.2s ease 0.4s,
+    height 0.2s ease 0.6s;
+}
+
+// required fourth error
+
+.customField.fourth .textInput:invalid ~ .border.primary::before {
+  left: 0;
+  bottom: 0;
+  border-bottom: 0px solid #ff3333;
+  border-right: 0px solid #ff3333;
+  transition: border-width 0.2s ease 0.8s, width 0.2s ease 0.6s,
+    height 0.2s ease 0.4s;
+}
+
+.customField.fourth .textInput:invalid ~ .border.primary::after {
+  top: -2px;
+  right: -2px;
+  border-top: 0px solid #ff3333;
+  border-left: 0px solid #ff3333;
+  transition: border-width 0s ease 0.4s, width 0.2s ease 0.2s, height 0.2s ease;
+}
+
+.customField.fourth .textInput:focus:invalid ~ .border.primary::after,
+.customField.fourth .textInput:focus:invalid ~ .border.primary::before,
+.customField.fourth .textInput:focus:invalid ~ .border.secondary::after,
+.customField.fourth .textInput:focus:invalid ~ .border.secondary::before,
+.customField.fourth .textInput:focus:invalid ~ .border.dark::after,
+.customField.fourth .textInput:focus:invalid ~ .border.dark::before {
+  width: 100%;
+  height: 100%;
+  border-width: 2px;
+  border-color: #ff3333;
+}
+
+.customField.fourth .textInput:focus:invalid ~ .border.primary::before,
+.customField.fourth .textInput:focus:invalid ~ .border.secondary::before,
+.customField.fourth .textInput:focus:invalid ~ .border.dark::before {
+  transition: width 0.1s ease, height 0.1s ease 0.1s, border-color 0.1s;
+}
+
+.customField.fourth .textInput:focus:invalid ~ .border.primary::after,
+.customField.fourth .textInput:focus:invalid ~ .border.secondary::after,
+.customField.fourth .textInput:focus:invalid ~ .border.dark::after {
+  transition: border-width 0s ease 0.2s, width 0.1s ease 0.2s,
+    height 0.1s ease 0.3s, border-color 0.1s;
+}
