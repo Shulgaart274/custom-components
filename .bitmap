@@ -4,11 +4,6 @@
     "artem_sh.test/checkbox@1.0.0": {
         "files": [
             {
-                "relativePath": "src/checkbox/checkbox-mark.png",
-                "test": false,
-                "name": "checkbox-mark.png"
-            },
-            {
                 "relativePath": "src/checkbox/checkbox.js",
                 "test": false,
                 "name": "checkbox.js"
@@ -17,6 +12,11 @@
                 "relativePath": "src/checkbox/checkbox.module.scss",
                 "test": false,
                 "name": "checkbox.module.scss"
+            },
+            {
+                "relativePath": "src/checkbox/checkmark.svg",
+                "test": false,
+                "name": "checkmark.svg"
             }
         ],
         "mainFile": "src/checkbox/checkbox.js",

@@ -16,7 +16,7 @@
   display: inline-block;
   border: 1px solid #222;
   border-radius: 3px;
-  background: #866ec7 url(./checkbox-mark.png) center/2600% no-repeat;
+  background: #866ec7 url("./checkmark.svg") center/2600% no-repeat;
   transition: background-size 0.2s ease;
 }
 .customCheckbox .checkmarkSecondary {
@@ -25,7 +25,7 @@
   border: 1px solid #222;
   display: inline-block;
   border-radius: 3px;
-  background: #3445b4 url(./checkbox-mark.png) center/2600% no-repeat;
+  background: #3445b4 url("./checkmark.svg") center/2600% no-repeat;
   transition: background-size 0.2s ease;
 }
 .customCheckbox .checkmarkDark {
@@ -34,7 +34,7 @@
   border: 1px solid #f8b739;
   display: inline-block;
   border-radius: 3px;
-  background: #f8b739 url(./checkbox-mark.png) center/2600% no-repeat;
+  background: #f8b739 url("./checkmark.svg") center/2600% no-repeat;
   transition: background-size 0.2s ease;
 }
 
