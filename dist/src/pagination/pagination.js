@@ -192,7 +192,7 @@ var Pagination = function Pagination(_ref) {
   }, "Prev")), pagerr.pages.map(function (page, index) {
     return /*#__PURE__*/_react.default.createElement("li", {
       key: index,
-      className: pagerr.currentPage === page ? "".concat(_paginationModule.default.paginationItem, " ").concat(_paginationModule.default.active) : "".concat(_paginationModule.default.paginationItem)
+      className: pagerr.currentPage === page ? "".concat(_paginationModule.default.paginationItem, " ").concat(_paginationModule.default.active) : "".concat(_paginationModule.default.paginationItem, " ").concat(_paginationModule.default.hidden)
     }, /*#__PURE__*/_react.default.createElement(_paginationBtn.default, {
       className: "".concat(_paginationModule.default.paginationButton, " ").concat(_paginationModule.default.btnPage),
       onClick: function onClick() {

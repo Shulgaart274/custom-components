@@ -45,7 +45,7 @@ function App() {
         initialPage={3}
         pageSize={10}
         numOfPages={10}
-        color="dark"
+        color="primary"
       />
     </div>
   );

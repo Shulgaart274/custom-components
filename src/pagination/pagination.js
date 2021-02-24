@@ -161,7 +161,7 @@ const Pagination = ({
           className={
             pagerr.currentPage === page
               ? `${styles.paginationItem} ${styles.active}`
-              : `${styles.paginationItem}`
+              : `${styles.paginationItem} ${styles.hidden}`
           }
         >
           <PaginationButton

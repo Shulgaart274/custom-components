@@ -17,7 +17,7 @@ $animation-duration: 700ms;
   box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
 }
 
-.pagination .paginationItem {
+.paginationItem {
   overflow: hidden;
   display: flex;
   justify-content: center;
@@ -125,4 +125,18 @@ $animation-duration: 700ms;
 .pagination.dark .paginationItem.disabled:hover {
   background-color: #c2902b;
   opacity: 0.3;
+}
+
+@media screen and (max-width: 559px) {
+  .hidden {
+    display: none;
+  }
+
+  .pagination {
+    width: 100%;
+  }
+
+  .paginationItem {
+    flex-basis: 100%;
+  }
 }
