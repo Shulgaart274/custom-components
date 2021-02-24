@@ -2,6 +2,9 @@ $animation-duration: 700ms;
 
 .pagination {
   display: flex;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   background-color: #866ec7;
